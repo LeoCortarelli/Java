@@ -1,0 +1,42 @@
+RODAR A API COM O SPRING BOOT
+
+Abra o navegador > localhost:8080
+
+/-----------------------------\
+COLOCANDO AS DEPENDENCIAS 
+
+abra o arquivo MAVEN > clicar em DEPENDENCIA no +
+
+INSTALANDO A DEPENDENCIA DO MYSQL
+DIGITE: mysql
+Selecione a opção: myssql-connector-java
+
+INSTALANDO A DEPENDENCIA DO JPA
+DIGITE: data-jpa
+Selecione a opção: spring-boot-starter-data-jpa
+
+/-----------------------------\
+COLOCAR AS APLICAÇÕES DO BANCO
+
+ir em TEMPLATES > application.properties
+COLAR O SEGUINTE CODIGO
+
+# Altera a estrutura da tabela caso a entidade tenha mudanças.
+spring.jpa.hibernate.ddl-auto=update
+
+# Acesso ao banco de dados
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/nome_base_de_dados   //(nome_base_de_dados) MUDA PARA O NOME DO SEU BANCO
+
+# Usuário do banco de dados
+spring.datasource.username=root
+
+# Senha do banco de dados
+spring.datasource.password=senha  // Se não tiver senha e so apagar senha (não precisa colocar "" vazias)
+
+/----------------------------------\
+
+COLOCANDO O VALIDADOR JPA 
+
+Ir no MAVEN > Adcionar uma dependencia 
+Escrever no campo de texto > spring-boot-validation
+Selecione a opção: spring-boot-starter-validation 
